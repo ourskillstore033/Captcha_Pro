@@ -1,0 +1,92 @@
+"@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+.font-heading {
+    font-family: 'Outfit', sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 244 75% 59%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 244 100% 96%;
+        --accent-foreground: 244 75% 59%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 244 75% 59%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+    }
+}
+
+/* Captcha-specific styles */
+.captcha-canvas {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.success-glow {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
+    border-color: rgb(16, 185, 129) !important;
+}
+
+.error-glow {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.35);
+    border-color: rgb(239, 68, 68) !important;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+.animate-shake { animation: shake 0.4s ease-in-out; }
+
+/* Gradient mesh background for hero feel */
+.mesh-bg {
+    background:
+        radial-gradient(at 20% 0%, hsla(244, 100%, 92%, 0.6) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(190, 100%, 90%, 0.5) 0px, transparent 50%),
+        #F8FAFC;
+}
+
+@layer base {
+    [data-debug-wrapper=\"true\"] {
+        display: contents !important;
+    }
+}
+"
